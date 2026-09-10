@@ -60,6 +60,19 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   <figcaption>시연 데이터 수집 — 손에 든 UMI 그리퍼로 약 12° 경사면을 롤러로 눌러 따라갑니다. 아이폰이 영상·6-DoF 자세를 30 Hz로, 손목 6축 F/T 센서가 접촉력을 500 Hz로 기록합니다. 절연테이프 표면 153회, 종이 표면 150회.</figcaption>
 </section>
 
+<section>
+  <h2>수집 인터페이스</h2>
+  <div class="grid">
+    <div class="card">
+      <video controls playsinline preload="metadata" poster="media/interface_poster.jpg" style="aspect-ratio:940/1040;max-height:70vh;object-fit:contain">
+        <source src="media/interface.mp4" type="video/mp4">
+      </video>
+      <div class="t">Rerun으로 영상 · 깊이 · 6축 힘/토크 · 그리퍼 개방도를 동기 기록</div>
+      <p class="d">접촉이 시작되는 순간 힘 그래프(fz)가 −20~−30 N으로 꺾이는 것이 보입니다. 이 스트림이 그대로 학습 데이터가 됩니다.</p>
+    </div>
+  </div>
+</section>
+
 <section class="abstract">
   <h2>요약</h2>
   <p>Diffusion Policy는 영상과 손목 자세만으로 시연을 모방하지만, 경사면을 눌러 따라가는 접촉 과제의 결과를 지배하는 마찰과 법선력은 영상에 나타나지 않습니다. 표준 UMI 그리퍼에 6축 힘/토크 센서를 통합해 시연을 모으고, 그 힘을 정책 입력으로 <em>어떤 형태로</em> 넣어야 하는지를 데이터·모델·시드를 고정한 통제 비교(힘 없음 / 원시 렌치 / 물리 구조화, 시드 3개)로 측정했습니다. 학습한 표면과 마찰이 35 % 다른 표면에서 함께 평가하고, 두 표면을 섞어 학습한 경우도 비교했습니다.</p>
