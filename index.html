@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UMI 힘 표현 연구</title>
+<meta name="description" content="손잡이형 UMI 그리퍼에 6축 F/T 센서를 통합해 시연을 모으고, 힘을 Diffusion Policy에 어떤 형태로 넣어야 하는지 통제 비교로 측정한 학부 연구. 시연·로봇 영상.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{--paper:#fbfbf9;--card:#fff;--ink:#1a1a19;--ink2:#52514e;--mute:#8a8a85;--rule:#e2e1dc;--e3:#1baf7a;--e3soft:#e3f5ee;--chip:#ecebe6;--btn:#1a1a19;--btnink:#fff}
+@media (prefers-color-scheme:dark){:root{--paper:#141413;--card:#1d1d1b;--ink:#ecebe6;--ink2:#b9b8b2;--mute:#7f7e79;--rule:#2e2e2b;--e3soft:#173d31;--chip:#262624;--btn:#ecebe6;--btnink:#141413}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "IBM Plex Sans KR",system-ui,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+main{max-width:860px;margin:0 auto;padding:44px 20px 72px;display:flex;flex-direction:column;gap:48px}
+header{text-align:center}
+.venue{font-size:14px;color:var(--mute);letter-spacing:.02em;margin-bottom:14px}
+h1{font-size:clamp(24px,4.4vw,38px);line-height:1.22;margin:0 auto 16px;font-weight:700;text-wrap:balance;max-width:20ch}
+.authors{font-size:17px;color:var(--ink);margin:0 0 4px} .authors sup{color:var(--mute);font-size:.7em}
+.affil{font-size:14.5px;color:var(--ink2);margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--btn);color:var(--btnink);text-decoration:none;font-weight:600;font-size:14.5px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+h2{font-size:22px;margin:0 0 14px;font-weight:700;text-align:center}
+p{margin:0 0 12px;color:var(--ink2)} .abstract p{max-width:66ch;margin:0 auto 12px;text-align:left}
+.claim{max-width:66ch;margin:16px auto 0;border-left:3px solid var(--e3);padding:10px 14px;background:var(--e3soft);border-radius:0 8px 8px 0;color:var(--ink);font-weight:500;text-align:left}
+figure{margin:0} img,video{max-width:100%;display:block;border-radius:12px;background:#000}
+.hero video{width:100%;aspect-ratio:9/16;max-height:78vh;object-fit:contain;margin:0 auto}
+@media (min-width:700px){.hero video{max-width:420px}}
+figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
+.card .t{font-weight:600;margin:10px 2px 2px;color:var(--ink)} .card .d{font-size:14px;color:var(--ink2);margin:0 2px}
+.soon{aspect-ratio:16/10;border-radius:10px;background:var(--chip);display:grid;place-items:center;color:var(--mute);font-size:14px;text-align:center;padding:12px}
+.two{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
+.k{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+pre{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.5;overflow-x:auto;color:var(--ink2);max-width:720px;margin:0 auto}
+footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:var(--mute);text-align:center;line-height:1.7}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="venue">2026 제3회 융합과 혁신: 학부 연구생 학술제 · 포스터</div>
+  <h1>UMI 기반 시연 데이터를 활용한 Diffusion Policy 학습 및 manipulation 정책 표현 방식 연구</h1>
+  <p class="authors">박지용<sup>1</sup> &nbsp;·&nbsp; 김상현<sup>2</sup></p>
+  <p class="affil"><sup>1</sup>경희대학교 기계공학부 &nbsp; <sup>2</sup>경희대학교 기계공학부 교수</p>
+  <div class="btns">
+    <a class="btn" href="poster.pdf">📄 포스터 PDF</a>
+    <a class="btn ghost" href="#collect">🎥 시연 영상</a>
+    <a class="btn ghost" href="#robot" aria-disabled="true">🦾 로봇 영상 (9월 중)</a>
+  </div>
+</header>
+
+<section class="hero" id="collect">
+  <video controls playsinline preload="metadata" poster="media/collection_poster.jpg">
+    <source src="media/collection.mp4" type="video/mp4">
+  </video>
+  <figcaption>시연 데이터 수집 — 손에 든 UMI 그리퍼로 약 12° 경사면을 롤러로 눌러 따라갑니다. 아이폰이 영상·6-DoF 자세를 30 Hz로, 손목 6축 F/T 센서가 접촉력을 500 Hz로 기록합니다. 절연테이프 표면 153회, 종이 표면 150회.</figcaption>
+</section>
+
+<section class="abstract">
+  <h2>요약</h2>
+  <p>Diffusion Policy는 영상과 손목 자세만으로 시연을 모방하지만, 경사면을 눌러 따라가는 접촉 과제의 결과를 지배하는 마찰과 법선력은 영상에 나타나지 않습니다. 표준 UMI 그리퍼에 6축 힘/토크 센서를 통합해 시연을 모으고, 그 힘을 정책 입력으로 <em>어떤 형태로</em> 넣어야 하는지를 데이터·모델·시드를 고정한 통제 비교(힘 없음 / 원시 렌치 / 물리 구조화, 시드 3개)로 측정했습니다. 학습한 표면과 마찰이 35 % 다른 표면에서 함께 평가하고, 두 표면을 섞어 학습한 경우도 비교했습니다.</p>
+  <div class="claim">힘 표현의 우열은 학습 데이터가 배치 조건을 덮는지에 따라 부호가 바뀝니다. 원시 렌치는 어느 조건에서도 이득이 없고(그러나 힘을 지우면 오차가 87 % 늘어 — 쓰이되 도움이 되지 않음), 물리적으로 구조화한 표현은 덮은 조건에서 9–11 % 이득, 덮지 못한 조건에서는 힘을 안 쓰는 것보다 나쁩니다. 이득은 중력 보상만으로 포화됩니다.</div>
+</section>
+
+<section id="robot">
+  <h2>로봇 배포 실험</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="soon">Franka FR3 실험 영상<br>9월 중 추가</div>
+      <div class="t">같은 그리퍼를 FR3 플랜지에 옮겨 달아 폐루프 실행</div>
+      <p class="d">시연 장치와 로봇 장치가 같은 기구·같은 센서를 공유합니다. 배포 루프·안전 필터·hand-eye 캘리브레이션은 구현되어 있고 시연 재생 시험을 통과했습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>핵심 결과 한 장</h2>
+  <figure><img src="media/fig8_mixed.png" alt="단일 표면 학습과 혼합 학습에서 힘 없음(E1)과 구조화 표현(E3)의 접촉 오차">
+  <figcaption>접촉 구간 위치 오차 [mm], 시드 3개. 왼쪽: 테이프만으로 학습 — 구조화 표현은 테이프에서 <span class="k">−11 %</span>, 처음 보는 종이에서 <span class="k">+8 %</span>. 오른쪽: 같은 116 에피소드를 두 표면으로 나눠 학습 — 종이 손해가 사라지고 테이프 이득 <span class="k">−9 %</span>는 남습니다. 나머지 수치는 포스터에 있습니다.</figcaption></figure>
+</section>
+
+<section>
+  <h2>하드웨어</h2>
+  <div class="two">
+    <figure><img src="media/rig.jpg" alt="F/T 센서를 통합한 손잡이형 UMI 그리퍼"><figcaption>제작한 수집 장치 — 아이폰, 6축 F/T, 모터. 로봇 플랜지에 그대로 올라갑니다.</figcaption></figure>
+    <figure><img src="media/standard_umi.jpg" alt="표준 UMI 그리퍼"><figcaption>표준 UMI — 카메라만 있고 손목 F/T가 없습니다.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>인용</h2>
+<pre>박지용, 김상현. UMI 기반 시연 데이터를 활용한 Diffusion Policy 학습 및
+manipulation 정책 표현 방식 연구. 2026 제3회 융합과 혁신: 학부 연구생 학술제, 경희대학교.</pre>
+</section>
+
+<footer>박지용 · 경희대학교 기계공학부 · 2026</footer>
+</main>
+</body>
+</html>
