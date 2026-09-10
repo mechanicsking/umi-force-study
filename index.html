@@ -25,8 +25,10 @@ h2{font-size:22px;margin:0 0 14px;font-weight:700;text-align:center}
 p{margin:0 0 12px;color:var(--ink2)} .abstract p{max-width:66ch;margin:0 auto 12px;text-align:left}
 .claim{max-width:66ch;margin:16px auto 0;border-left:3px solid var(--e3);padding:10px 14px;background:var(--e3soft);border-radius:0 8px 8px 0;color:var(--ink);font-weight:500;text-align:left}
 figure{margin:0} img,video{max-width:100%;display:block;border-radius:12px;background:#000}
-.hero video{width:100%;aspect-ratio:9/16;max-height:78vh;object-fit:contain;margin:0 auto}
-@media (min-width:700px){.hero video{max-width:420px}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
+.pair video{width:100%;height:min(72vh,600px);object-fit:contain;background:#000}
+.pair figcaption{text-align:left}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.pair video{height:auto;aspect-ratio:9/16}}
 figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
@@ -53,23 +55,21 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   </div>
 </header>
 
-<section class="hero" id="collect">
-  <video controls playsinline preload="metadata" poster="media/collection_poster.jpg">
-    <source src="media/collection.mp4" type="video/mp4">
-  </video>
-  <figcaption>시연 데이터 수집 — 손에 든 UMI 그리퍼로 약 12° 경사면을 롤러로 눌러 따라갑니다. 아이폰이 영상·6-DoF 자세를 30 Hz로, 손목 6축 F/T 센서가 접촉력을 500 Hz로 기록합니다. 절연테이프 표면 153회, 종이 표면 150회.</figcaption>
-</section>
-
-<section>
-  <h2>수집 인터페이스</h2>
-  <div class="grid">
-    <div class="card">
-      <video controls playsinline preload="metadata" poster="media/interface_poster.jpg" style="aspect-ratio:940/1040;max-height:70vh;object-fit:contain">
+<section id="collect">
+  <h2>시연 데이터 수집</h2>
+  <div class="pair">
+    <figure>
+      <video controls playsinline preload="metadata" poster="media/collection_poster.jpg">
+        <source src="media/collection.mp4" type="video/mp4">
+      </video>
+      <figcaption><b>시연</b> — 손에 든 UMI 그리퍼로 약 12° 경사면을 롤러로 눌러 따라갑니다. 절연테이프 표면 153회, 종이 표면 150회.</figcaption>
+    </figure>
+    <figure>
+      <video controls playsinline preload="metadata" poster="media/interface_poster.jpg">
         <source src="media/interface.mp4" type="video/mp4">
       </video>
-      <div class="t">Rerun으로 영상 · 깊이 · 6축 힘/토크 · 그리퍼 개방도를 동기 기록</div>
-      <p class="d">접촉이 시작되는 순간 힘 그래프(fz)가 −20~−30 N으로 꺾이는 것이 보입니다. 이 스트림이 그대로 학습 데이터가 됩니다.</p>
-    </div>
+      <figcaption><b>기록 화면</b> — Rerun으로 영상 · 깊이 · 6축 힘/토크 · 그리퍼 개방도를 동기 기록. 접촉 순간 fz가 −20~−30 N으로 꺾입니다.</figcaption>
+    </figure>
   </div>
 </section>
 
