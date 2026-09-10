@@ -79,6 +79,12 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   <div class="claim">힘 표현의 우열은 학습 데이터가 배치 조건을 덮는지에 따라 부호가 바뀝니다. 원시 렌치는 어느 조건에서도 이득이 없고(그러나 힘을 지우면 오차가 87 % 늘어 — 쓰이되 도움이 되지 않음), 물리적으로 구조화한 표현은 덮은 조건에서 9–11 % 이득, 덮지 못한 조건에서는 힘을 안 쓰는 것보다 나쁩니다. 이득은 중력 보상만으로 포화됩니다.</div>
 </section>
 
+<section>
+  <h2>파이프라인</h2>
+  <figure><img src="media/fig11_pipeline.png" alt="시연 → 정렬·중력 보상 → 힘 표현 선택 → Diffusion Policy → 평가 → FR3 배포">
+  <figcaption>손에 든 시연이 정책이 되어 평가·배포되는 흐름. 세 정책은 <b>힘 표현 단계</b>만 다르고 나머지는 전부 같습니다.</figcaption></figure>
+</section>
+
 <section id="robot">
   <h2>로봇 배포 실험</h2>
   <div class="grid">
