@@ -28,13 +28,13 @@ figure{margin:0} img,video{max-width:100%;display:block;border-radius:12px;backg
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
 .pair video{width:100%;height:min(72vh,600px);object-fit:contain;background:#000}
 .pair figcaption{text-align:left}
-@media (max-width:640px){.pair{grid-template-columns:1fr}.pair video{height:auto;aspect-ratio:9/16}}
+@media (max-width:640px){.two{grid-template-columns:1fr 1fr}.two figure:first-child{grid-column:1/-1}.pair{grid-template-columns:1fr}.pair video{height:auto;aspect-ratio:9/16}}
 figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
 .card .t{font-weight:600;margin:10px 2px 2px;color:var(--ink)} .card .d{font-size:14px;color:var(--ink2);margin:0 2px}
 .soon{aspect-ratio:16/10;border-radius:10px;background:var(--chip);display:grid;place-items:center;color:var(--mute);font-size:14px;text-align:center;padding:12px}
-.two{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
+.two{display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
 .k{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
 pre{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.5;overflow-x:auto;color:var(--ink2);max-width:720px;margin:0 auto}
 footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:var(--mute);text-align:center;line-height:1.7}
@@ -101,6 +101,7 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   <div class="two">
     <figure><img src="media/rig.jpg" alt="F/T 센서를 통합한 손잡이형 UMI 그리퍼"><figcaption>제작한 수집 장치 — 아이폰, 6축 F/T, 모터. 로봇 플랜지에 그대로 올라갑니다.</figcaption></figure>
     <figure><img src="media/standard_umi.jpg" alt="표준 UMI 그리퍼"><figcaption>표준 UMI — 카메라만 있고 손목 F/T가 없습니다.</figcaption></figure>
+    <figure><img src="media/tool.jpg" alt="그리퍼가 파지하는 3D 프린트 롤러 툴"><figcaption>롤러 툴 — 그리퍼가 이 손잡이를 물고 위쪽 바를 경사면에 눌러 따라갑니다. 바의 긁힌 자국이 접촉 흔적입니다.</figcaption></figure>
   </div>
 </section>
 
