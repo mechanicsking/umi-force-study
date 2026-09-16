@@ -33,6 +33,10 @@ figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;tex
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
 .card .t{font-weight:600;margin:10px 2px 2px;color:var(--ink)} .card .d{font-size:14px;color:var(--ink2);margin:0 2px}
+.card>img{width:100%;border-radius:10px;display:block}
+.robot{display:flex;gap:16px;align-items:flex-start;max-width:720px;margin:0 auto;flex-wrap:wrap}
+.robot>img{width:270px;max-width:100%;border-radius:10px;display:block;flex:0 0 auto}
+.robot>div{flex:1 1 260px;min-width:0}
 .soon{aspect-ratio:16/10;border-radius:10px;background:var(--chip);display:grid;place-items:center;color:var(--mute);font-size:14px;text-align:center;padding:12px}
 .two{display:grid;grid-template-columns:1.25fr 1fr .8fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
 .k{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
@@ -87,11 +91,11 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
 
 <section id="robot">
   <h2>로봇 배포 실험</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="soon">Franka FR3 실험 영상<br>9월 중 추가</div>
-      <div class="t">같은 그리퍼를 FR3 플랜지에 옮겨 달아 폐루프 실행</div>
-      <p class="d">시연 장치와 로봇 장치가 같은 기구·같은 센서를 공유합니다. 배포 루프·안전 필터·hand-eye 캘리브레이션은 구현되어 있고 시연 재생 시험을 통과했습니다.</p>
+  <div class="card robot">
+    <img src="media/robot_setup.jpg" alt="같은 UMI 그리퍼를 장착하고 접촉 툴을 문 Franka FR3">
+    <div>
+      <div class="t">같은 그리퍼를 FR3에 옮겨 달고 같은 접촉 툴을 물린 구성</div>
+      <p class="d">시연 장치와 로봇 장치가 같은 기구·같은 센서를 공유합니다. 배포 루프·안전 필터·연구실 FR3 브릿지 연결까지 구현되어 있고, 로봇 없는 모의 브릿지로 폐루프 시험을 통과했습니다. <b>폐루프 실행 영상은 추가 예정입니다.</b></p>
     </div>
   </div>
 </section>
