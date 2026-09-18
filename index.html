@@ -65,7 +65,7 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   <h2>시연 데이터 수집</h2>
   <div class="pair">
     <figure>
-      <video controls playsinline preload="metadata" poster="media/collection_poster.jpg">
+      <video controls playsinline muted preload="metadata" poster="media/collection_poster.jpg">
         <source src="media/collection.mp4" type="video/mp4">
       </video>
       <figcaption><b>시연</b> — 손에 든 UMI 그리퍼로 약 12° 경사면을 고정 바로 눌러 미끄러지며 따라갑니다. 절연테이프 표면 153회, 종이 표면 150회.</figcaption>
@@ -86,6 +86,15 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
 </section>
 
 <section>
+  <h2>하드웨어</h2>
+  <div class="two">
+    <figure><img src="media/rig.jpg" alt="F/T 센서를 통합한 손잡이형 UMI 그리퍼"><figcaption>제작한 수집 장치 — 아이폰, 6축 F/T, 모터. 로봇 플랜지에 그대로 올라갑니다.</figcaption></figure>
+    <figure><img src="media/standard_umi.jpg" alt="표준 UMI 그리퍼"><figcaption>표준 UMI — 카메라만 있고 손목 F/T가 없습니다.</figcaption></figure>
+    <figure><img src="media/tool.jpg" alt="그리퍼가 파지하는 3D 프린트 슬라이더 바"><figcaption>접촉 툴 — 그리퍼가 손잡이를 물고 위쪽 바를 경사면에 눌러 따라갑니다.</figcaption></figure>
+  </div>
+</section>
+
+<section>
   <h2>파이프라인</h2>
   <figure><img src="media/fig11_pipeline.png" alt="시연 → 정렬·중력 보상 → 힘 표현 선택 → Diffusion Policy → 평가 → FR3 배포">
   <figcaption>손에 든 시연이 정책이 되어 평가·배포되는 흐름. 세 정책은 <b>힘 표현 단계</b>만 다르고 나머지는 전부 같습니다.</figcaption></figure>
@@ -97,7 +106,7 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
     <figure><video controls playsinline muted preload="metadata" poster="media/robot_wide_poster.jpg" src="media/robot_wide.mp4"></video><figcaption>실험 장면 — FR3 에 같은 UMI 그리퍼를 달고 경사 판 위에서 롤아웃 (외부 카메라, 15 s)</figcaption></figure>
     <figure><video controls playsinline muted preload="metadata" poster="media/robot_close_poster.jpg" src="media/robot_close.mp4"></video><figcaption>측면 클로즈업 — 툴 바가 경사면을 누르며 미끄러진다 (20 s)</figcaption></figure>
   </div>
-  <figure style="margin-top:14px"><video controls playsinline preload="metadata" poster="media/robot_e1_vs_e3_poster.jpg" src="media/robot_e1_vs_e3.mp4"></video>
+  <figure style="margin-top:14px"><video controls playsinline muted preload="metadata" poster="media/robot_e1_vs_e3_poster.jpg" src="media/robot_e1_vs_e3.mp4"></video>
   <figcaption>Franka FR3에 같은 그리퍼를 달고 두 정책을 나란히. 왼쪽 <b>E1</b>(영상+자세만)은 판을 놓치고 다시 잡기를 반복하고,
   오른쪽 <b>E3</b>(+구조화한 힘)는 끝까지 눌러 미끄러집니다. 손목 카메라, 실시간.</figcaption></figure>
   <div class="tw"><table>
@@ -127,14 +136,6 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   <figcaption>접촉 구간 위치 오차 [mm], 시드 3개. 왼쪽: 테이프만으로 학습 — 구조화 표현은 테이프에서 <span class="k">−11 %</span>, 처음 보는 종이에서 <span class="k">+8 %</span>. 오른쪽: 같은 116 에피소드를 두 표면으로 나눠 학습 — 종이 손해가 사라지고 테이프 이득 <span class="k">−9 %</span>는 남습니다. 나머지 수치는 포스터에 있습니다.</figcaption></figure>
 </section>
 
-<section>
-  <h2>하드웨어</h2>
-  <div class="two">
-    <figure><img src="media/rig.jpg" alt="F/T 센서를 통합한 손잡이형 UMI 그리퍼"><figcaption>제작한 수집 장치 — 아이폰, 6축 F/T, 모터. 로봇 플랜지에 그대로 올라갑니다.</figcaption></figure>
-    <figure><img src="media/standard_umi.jpg" alt="표준 UMI 그리퍼"><figcaption>표준 UMI — 카메라만 있고 손목 F/T가 없습니다.</figcaption></figure>
-    <figure><img src="media/tool.jpg" alt="그리퍼가 파지하는 3D 프린트 슬라이더 바"><figcaption>접촉 툴 — 그리퍼가 손잡이를 물고 위쪽 바를 경사면에 눌러 따라갑니다.</figcaption></figure>
-  </div>
-</section>
 
 <section>
   <h2>인용</h2>
