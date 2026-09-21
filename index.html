@@ -103,12 +103,19 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
 <section id="robot">
   <h2>로봇 폐루프 검증 — 오프라인 차이가 실제 동작으로 이어졌다</h2>
   <div class="pair">
-    <figure><video controls playsinline muted preload="metadata" poster="media/robot_wide_poster.jpg" src="media/robot_wide.mp4"></video><figcaption>실험 장면 — FR3 에 같은 UMI 그리퍼를 달고 경사 판 위에서 롤아웃 (외부 카메라, 15 s)</figcaption></figure>
-    <figure><video controls playsinline muted preload="metadata" poster="media/robot_close_poster.jpg" src="media/robot_close.mp4"></video><figcaption>측면 클로즈업 — 툴 바가 경사면을 누르며 미끄러진다 (20 s)</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_side_tape_poster.jpg" src="media/robot_side_tape.mp4"></video><figcaption>테이프 판(학습 표면) — 측면, 한 회차 (10 s)</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_side_paper_poster.jpg" src="media/robot_side_paper.mp4"></video><figcaption>종이 판(미학습 표면) — 측면, 한 회차 (10 s)</figcaption></figure>
   </div>
-  <figure style="margin-top:14px"><video controls playsinline muted preload="metadata" poster="media/robot_e1_vs_e3_poster.jpg" src="media/robot_e1_vs_e3.mp4"></video>
-  <figcaption>Franka FR3에 같은 그리퍼를 달고 두 정책을 나란히. 왼쪽 <b>E1</b>(영상+자세만)은 판을 놓치고 다시 잡기를 반복하고,
-  오른쪽 <b>E3</b>(+구조화한 힘)는 끝까지 눌러 미끄러집니다. 손목 카메라, 실시간.</figcaption></figure>
+  <p class="d" style="max-width:720px;margin:10px auto 0">바깥에서 찍은 영상으로는 두 정책을 구분할 수 없습니다. E1이 판 위에 뜨는 높이가 1 mm 안팎이라 카메라에 안 잡히고,
+  회차는 E3·E1이 18초마다 번갈아 돌아 어느 회차가 어느 정책인지도 화면만으로는 알 수 없습니다. 그래서 정책 비교는 아래처럼
+  <b>손목 카메라 녹화</b>로 합니다. 이 녹화에는 프레임마다 시각이 있어 회차의 정책이 확정되고, 힘 센서 값이 같이 찍힙니다.</p>
+  <div class="pair" style="margin-top:14px">
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_e1_vs_e3_poster.jpg" src="media/robot_e1_vs_e3.mp4"></video>
+    <figcaption><b>테이프 판(학습 표면)</b> — 왼쪽 <b>E1</b>(영상+자세만)은 판을 놓치고 다시 잡기를 반복하고, 오른쪽 <b>E3</b>(+구조화한 힘)는 끝까지 눌러 미끄러집니다. 손목 카메라, 실시간.</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_e1_vs_e3_paper_poster.jpg" src="media/robot_e1_vs_e3_paper.mp4"></video>
+    <figcaption><b>종이 판(미학습 표면)</b> — 같은 두 정책. E1도 접촉을 꽤 유지해서(66 %) 차이가 테이프의 절반 이하로 줄어듭니다. 위 숫자는 |F|와 지금까지의 접촉 유지 비율.</figcaption></figure>
+  </div>
+  <figure style="margin-top:14px"><video controls playsinline muted preload="metadata" poster="media/robot_wide_poster.jpg" src="media/robot_wide.mp4"></video><figcaption>실험 장면 전체 — FR3에 같은 UMI 그리퍼를 달고 경사 판 위에서 롤아웃 (외부 카메라, 15 s)</figcaption></figure>
   <div class="tw"><table>
     <thead><tr><th>표면</th><th>정책</th><th>접촉 유지</th><th>접촉 이탈</th></tr></thead>
     <tbody>
