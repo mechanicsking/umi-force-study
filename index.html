@@ -103,12 +103,16 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
 <section id="robot">
   <h2>로봇 폐루프 검증 — 오프라인 차이가 실제 동작으로 이어졌다</h2>
   <div class="pair">
-    <figure><video controls playsinline muted preload="metadata" poster="media/robot_side_tape_poster.jpg" src="media/robot_side_tape.mp4"></video><figcaption>테이프 판(학습 표면) — 측면, 한 회차 (10 s)</figcaption></figure>
-    <figure><video controls playsinline muted preload="metadata" poster="media/robot_side_paper_poster.jpg" src="media/robot_side_paper.mp4"></video><figcaption>종이 판(미학습 표면) — 측면, 한 회차 (10 s)</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_tape_a_poster.jpg" src="media/robot_tape_a.mp4"></video><figcaption>테이프 판(학습 표면) — 한 회차 전체: 시작 자세에서 내려와 닿고, 눌러 미끄러지다 멈춘다 (12 s)</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_tape_b_poster.jpg" src="media/robot_tape_b.mp4"></video><figcaption>테이프 판 — 다음 회차 (12 s). 테이프 영상은 세션 중간부터 찍혀 어느 회차가 어느 정책인지 표기하지 않는다</figcaption></figure>
   </div>
-  <p class="d" style="max-width:720px;margin:10px auto 0">바깥에서 찍은 영상으로는 두 정책을 구분할 수 없습니다. E1이 판 위에 뜨는 높이가 1 mm 안팎이라 카메라에 안 잡히고,
-  회차는 E3·E1이 18초마다 번갈아 돌아 어느 회차가 어느 정책인지도 화면만으로는 알 수 없습니다. 그래서 정책 비교는 아래처럼
-  <b>손목 카메라 녹화</b>로 합니다. 이 녹화에는 프레임마다 시각이 있어 회차의 정책이 확정되고, 힘 센서 값이 같이 찍힙니다.</p>
+  <div class="pair" style="margin-top:14px">
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_paper_e1_poster.jpg" src="media/robot_paper_e1.mp4"></video><figcaption>종이 판(미학습 표면) — <b>E1</b>(영상+자세만), 2차 세션 첫 회차 (12 s)</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="media/robot_paper_e3_poster.jpg" src="media/robot_paper_e3.mp4"></video><figcaption>종이 판 — <b>E3</b>(+구조화한 힘), 둘째 회차 (12.5 s)</figcaption></figure>
+  </div>
+  <p class="d" style="max-width:720px;margin:10px auto 0">바깥 카메라로는 두 정책이 거의 같아 보입니다. E1이 판 위에 스치는 높이가 몇 mm라 화면에 안 잡히고, 회차는 18초마다 두 정책이 번갈아 돕니다.
+  종이 영상은 2차 세션 시작부터 찍혀 회차 순서(E1 → E3 교대)로 정책을 표기했고, 테이프 영상은 세션 중간이라 표기하지 않았습니다. 정책 차이는 아래
+  <b>손목 카메라 녹화</b>에서 봅니다. 프레임마다 시각이 있어 회차의 정책이 확정되고, 힘 센서 값이 같이 찍힙니다.</p>
   <div class="pair" style="margin-top:14px">
     <figure><video controls playsinline muted preload="metadata" poster="media/robot_e1_vs_e3_poster.jpg" src="media/robot_e1_vs_e3.mp4"></video>
     <figcaption><b>테이프 판(학습 표면)</b> — 왼쪽 <b>E1</b>(영상+자세만)은 판을 놓치고 다시 잡기를 반복하고, 오른쪽 <b>E3</b>(+구조화한 힘)는 끝까지 눌러 미끄러집니다. 손목 카메라, 실시간.</figcaption></figure>
