@@ -28,7 +28,7 @@ figure{margin:0} img,video{max-width:100%;display:block;border-radius:12px;backg
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto}
 .pair video{width:100%;height:min(72vh,600px);object-fit:contain;background:#000}
 .pair figcaption{text-align:left}
-@media (max-width:640px){.two{grid-template-columns:1fr 1fr}.two figure:first-child{grid-column:1/-1}.pair{grid-template-columns:1fr}.pair video{height:auto;aspect-ratio:9/16}}
+@media (max-width:640px){.two{grid-template-columns:1fr 1fr}.pair{grid-template-columns:1fr}.pair video{height:auto;aspect-ratio:9/16}}
 figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;text-align:center}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px}
@@ -39,7 +39,7 @@ figcaption{font-size:14px;color:var(--mute);margin-top:10px;line-height:1.55;tex
 .robot>img{width:270px;max-width:100%;border-radius:10px;display:block;flex:0 0 auto}
 .robot>div{flex:1 1 260px;min-width:0}
 .soon{aspect-ratio:16/10;border-radius:10px;background:var(--chip);display:grid;place-items:center;color:var(--mute);font-size:14px;text-align:center;padding:12px}
-.two{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;max-width:720px;margin:0 auto}
 .k{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
 pre{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.5;overflow-x:auto;color:var(--ink2);max-width:720px;margin:0 auto}
 footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:var(--mute);text-align:center;line-height:1.7}
@@ -85,10 +85,12 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
 </section>
 
 <section>
-  <h2>하드웨어</h2>
+  <h2>하드웨어와 실험 환경</h2>
   <div class="two">
     <figure><img src="media/rig.jpg" alt="F/T 센서를 통합한 손잡이형 UMI 그리퍼"><figcaption>제작한 수집 장치 — 아이폰, 6축 F/T, 모터. 로봇 플랜지에 그대로 올라갑니다.</figcaption></figure>
     <figure><img src="media/tool.jpg" alt="그리퍼가 파지하는 3D 프린트 슬라이더 바"><figcaption>접촉 툴 — 그리퍼가 손잡이를 물고 위쪽 바를 경사면에 눌러 따라갑니다.</figcaption></figure>
+    <figure><img src="media/board_wedge.jpg" alt="경사 받침 측면"><figcaption>경사 받침 측면 — 약 12°. 두 표면이 같은 받침을 씁니다.</figcaption></figure>
+    <figure><img src="media/boards_two.jpg" alt="테이프 판과 종이 판"><figcaption>두 표면 — 절연테이프(왼쪽, 학습)와 종이(오른쪽, 미학습). 카메라에는 비슷하지만 마찰비가 0.31 → 0.21로 다릅니다.</figcaption></figure>
   </div>
 </section>
 
@@ -128,11 +130,7 @@ footer{border-top:1px solid var(--rule);padding-top:18px;font-size:13.5px;color:
   학습 조건에 갇힌다"가 폐루프에서 재현된 것입니다. 같은 받침에 표면만 바꿔 경사를 동일하게 두었고(μ 0.30 → 0.20),
   법선력을 맞춘 부분집합과 회귀에서도 E3 우세가 남았습니다. 시드 1개·E2 없음·접근 구간 생략은 한계입니다.</p>
   <figure style="margin-top:14px"><img src="media/robot_e1_vs_e3_still.jpg" alt="손목 카메라, 같은 스텝: E1 은 판을 놓쳤고 E3 는 누르며 미끄러진다"><figcaption>같은 스텝(2.7 s)의 두 정책. 왼쪽 E1 은 |F| 0.8 N — 판을 놓친 상태, 오른쪽 E3 는 11.6 N 으로 누르며 미끄러지는 중.</figcaption></figure>
-  <div class="two" style="margin-top:14px">
-    <figure><img src="media/robot_action.jpg" alt="경사 판 위에서 롤아웃 중인 FR3 와 UMI 그리퍼"><figcaption>실기 장면 — 같은 그리퍼·같은 툴, 판 위.</figcaption></figure>
-    <figure><img src="media/board_wedge.jpg" alt="경사 받침 측면"><figcaption>경사 받침 측면. 두 표면이 같은 받침을 썼다.</figcaption></figure>
-    <figure><img src="media/boards_two.jpg" alt="테이프 판과 종이 판"><figcaption>테이프(왼쪽)·종이(오른쪽) 표면.</figcaption></figure>
-  </div>
+  <figure style="margin-top:14px;max-width:420px;margin-left:auto;margin-right:auto"><img src="media/robot_action.jpg" alt="경사 판 위에서 롤아웃 중인 FR3 와 UMI 그리퍼"><figcaption>실기 장면 — 같은 그리퍼·같은 툴, 판 위.</figcaption></figure>
 </section>
 
 <section>
